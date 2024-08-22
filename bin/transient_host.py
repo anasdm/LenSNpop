@@ -103,3 +103,4 @@ class Sources:
 if __name__ == "__main__":
     S = Sources('SNIa', 10000)  
     S.generate_source_catalogue(0.2, 2)
+    
