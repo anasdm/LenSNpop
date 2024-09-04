@@ -14,4 +14,4 @@ How to simulate your own glSNe
 * lenspop.py : generate lens population
 * combine_lens_and_source.py : combine output from *host_transient.py* with output from *lenspop.py* to generate N lensing systems per source
 * lensSN.py : Compute positions for SNe, create catalogue for simsurvey
-* simsurvey_SNIa.py : Simulate catalogue of SNe using LSST observing strategy (uploaded for glSNe Ia), modifying sncosmo Source allows to simulate other subtypes
+* simsurvey_glSNIa.py : Simulate catalogue of SNe using LSST observing strategy (uploaded for glSNe Ia), modifying sncosmo Source allows to simulate other subtypes
