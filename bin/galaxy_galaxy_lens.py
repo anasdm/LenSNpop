@@ -9,9 +9,6 @@ from astropy.cosmology import Planck18
 # Load DataFrame
 df = pd.read_csv('../outputs/SNIa/SNIa_GalaxyGalaxyPop.csv')
 
-#Include angular size in arcsec
-df['rs'] = df['R_s']* Planck18.arcsec_per_kpc_comoving(np.array(df['z_host'])).value
-
 # Initialize arrays for computed results
 magnification_gal = np.zeros(len(df))
 x = np.zeros(len(df))
