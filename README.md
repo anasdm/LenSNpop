@@ -7,7 +7,8 @@ Before starting
 ------
 * Download the SCOTCH catalogue file (*scotch_Z3_1.1.hdf5*) from [here](https://zenodo.org/records/7563623#.Y8_2my9h2yA) and save it in /data/SourcePop
 * Download *redshift_splines.pkl*, *lenspop_splines.pkl* and the folder /2dpdfs/ from [LensPop](https://github.com/tcollett/LensPop) and save it in /data/LensPop
-* 
+* Download the PLASTICC templates you are interested in from [here](https://zenodo.org/records/2612896) and save them in /data/Templates
+  
 How to simulate glSNe + hosts
 -----
 * host_transient.py : generate small catalogue from SCOTCH
