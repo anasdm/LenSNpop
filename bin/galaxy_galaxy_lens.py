@@ -6,8 +6,8 @@ from tqdm import trange
 import random
 from astropy.cosmology import Planck18
 
-# Load DataFrame
-df = pd.read_csv('../outputs/SNIa/SNIa_GalaxyGalaxyPop.csv')
+# Load DataFrame, can be output file from combine_lens_and_source.py
+df = pd.read_csv('../outputs/SNIa/SNIa_GalaxyGalaxyPop.csv') 
 
 # Initialize arrays for computed results
 magnification_gal = np.zeros(len(df))
