@@ -10,7 +10,7 @@ import os
 import scipy
 # Please enter the path to where you have placed the Schlegel, Finkbeiner & Davis (1998) dust map files
 # You can also set the environment variable SFD_DIR to this path (in that case the variable below should be None)
-sfd98_dir = '/users/anasdm/simsurvey/data/sfd98'
+sfd98_dir = '../data/sfd98'
 import sncosmo
 #import simsurvey_tools as sst
 #from scipy.interpolate import RectBivariateSpline as Spline2d
@@ -31,36 +31,7 @@ z_i,z_f=0.3,0.4 ###Simulated in \Delta 0.1 redshift bins to speed up simulation
 ntransient=1000
 dec_range=(-90,35)
 
-def load_ztf_fields(filename='/users/anasdm/simsurvey/data/ZTF_Fields.txt', mwebv=False, galactic=False):
-    """Load the ZTF fields propose by Eran from the included file.
-
-    Parameters
-    ----------
-    filename: [str]
-        File name of the ASCII file containing the field definitions
-
-    mwebv: [bool]
-        Include the Milky Way E(B-V) from the file in the output
-
-    Return
-    ------
-    Dictionary of np.arrays with the field coordinates, IDs (and exinction)
-    """
-    fields = np.genfromtxt(filename, comments='%')
-
-    out = {'field_id': np.array(fields[:,0], dtype=int),
-           'ra': fields[:,1],
-           'dec': fields[:,2]}
-
-    if mwebv:
-        out['mwebv'] = fields[:,3]
-    if galactic:
-        out['l'] = fields[:,4]
-        out['b'] = fields[:,5]
-
-    return out
-
-def load_ztf_ccds(filename='/users/anasdm/simsurvey/data/ZTF_corners.txt', num_segs=16):
+def load_ztf_ccds(filename='../ZTF_corners.txt', num_segs=16):
     """
     """
     ccd_corners = np.genfromtxt(filename, skip_header=1)/2
@@ -85,13 +56,13 @@ def load_ztf_filters():
 
 
 ccds=load_ztf_ccds()
-dffields=pd.read_csv('/users/anasdm/simsurvey/data/lsstfields.csv')
+dffields=pd.read_csv('../data/lsstfields.csv')
 fields={}
 fields['field_id']=np.array(dffields['fieldID'],dtype=int)
 fields['ra']=np.array(dffields['ra'])
 fields['dec']=np.array(dffields['dec'])
 
-df=pd.read_csv('/users/anasdm/simsurvey/surveyplans/lsstobs.csv')
+df=pd.read_csv('../data/lsstobs.csv')
 
 obs = Table.from_pandas(df)
 
