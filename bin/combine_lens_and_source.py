@@ -66,7 +66,7 @@ def create_galaxy_galaxy_lenses(sourcefile, lensfile):
         combined_df.reset_index(drop=True, inplace=True)
 
         # Compute additional required columns
-        combined_df['rs'] = combined_df['R_d'] * Planck18.arcsec_per_kpc_proper(combined_df['z_host'].values).value
+        combined_df['rs'] = combined_df['R_d'] * Planck18.arcsec_per_kpc_comoving(combined_df['z_host'].values).value
         combined_df['R_Ein'] = einstein_radii[indices]
 
         # Append to the final DataFrame
